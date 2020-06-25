@@ -1,0 +1,15 @@
+/* Example of query to count number of violations in each category */
+SELECT COUNT(violation_id) AS Number, violation_category
+FROM building_codes
+GROUP BY violation_category
+ORDER BY COUNT(violation_id) DESC;
+
+The earliest and latest violation date for each category
+
+For Animals and Pests:
+
+
+select min(violation_date) AS Earliest_Date, max(violation_date) AS Latest_Date
+from building_codes
+where violation_category = 'Animals and Pests'
+ 
